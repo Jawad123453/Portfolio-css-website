@@ -1,0 +1,498 @@
+:root{
+  --primary-color:brown;
+  --main-transition:0.3s linear;
+  --padding-number:100px;
+  --secondory-color:rgb(12, 12, 12);
+}
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body{
+  background-color: black;
+  color:white;
+  position: relative;
+}
+.main-img{
+  position: fixed;
+  top:75px;
+  right:0;
+  background-image: url("https://cdn2.photostockeditor.com/c/3112/human-man-in-black-background-person-person-image.jpg");
+  height:calc(100vh - 75px);
+  width:60%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+@media (max-width:767px) {
+  .main-img{
+    width: 100%;
+  }
+}
+h1,h2,h3,h4,h5,h6{
+  margin:0;
+}
+.contaner{
+  width:1200px;
+  margin:0 auto;
+}
+@media (max-width:766px) {
+  .contaner{
+    margin: auto;
+    width:500px;
+  }
+}
+@media (max-width:550px) {
+  .contaner{
+    margin: auto;
+    width:250px;
+  }
+}
+@media (min-width:767px) {
+  .contaner{
+    margin: auto;
+    width:700px;
+  }
+}
+@media (min-width:992px) {
+  .contaner{
+    margin: auto;
+    width:900px;
+  }
+}
+@media (min-width:1200px) {
+  .contaner{
+    margin: auto;
+    width:1070px;
+  }
+}
+/* start of header */
+.header .contaner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .contaner .logo{
+  height:75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .contaner .logo span{
+  color:var(--primary-color);
+}
+.header .contaner .main-list{
+  flex:1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.header .contaner .main-list .x,
+.header .contaner .main-list .forml{
+  display: none;
+  cursor: pointer;
+}
+.header .contaner .main-list ul{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+
+}
+.header .contaner .main-list ul li{
+  margin:0 20px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--main-transition);
+}
+.header .contaner .main-list ul li::after{
+  content: "";
+  position: absolute;
+  bottom:0;
+  left:-100%;
+  background-color: var(--primary-color);
+  width:100%;
+  height:3px;
+  transition: var(--main-transition);
+}
+.header .contaner .main-list ul li:hover::after{
+  left:0;
+}
+.header .contaner .main-list ul li a{
+  display: block;
+  text-decoration: none;
+  color:white;
+  padding:0px 0 10px;
+}
+@media (max-width:767px) {
+  .header .contaner .main-list .x,
+  .header .contaner .main-list .forml{
+    display: block;
+  }
+  .header .contaner .main-list ul{
+    position: absolute;
+    top:0;
+    right:0;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    height:100vh;
+    width: 200px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    right:0%;
+    display: none;
+  }
+  .header .contaner .main-list ul .x{
+    margin: 20px;
+  }
+  .header .contaner .main-list ul li{
+    padding-top:10px;
+    padding-bottom:5px;
+  }
+}
+/* end of header */
+/* start of landing */
+.landing .contaner{
+  position: relative;
+}
+.landing-text{
+  position: absolute;
+  top:calc(40vh - 75px);
+  background-color: transparent;
+}
+.landing-text p{
+  font-size: 19px;
+}
+.landing-text h1{
+  font-size: 40px;
+  margin:15px 0;
+}
+.landing-text span{
+  color:var(--primary-color);
+}
+/* end of landing */
+/* start of about me*/
+.about{
+  margin-top: 100vh;
+  background-color: var(--secondory-color);
+  z-index: 100;
+  padding:var(--padding-number) 0;
+}
+.about .contaner{
+  display: flex;
+  gap:50px;
+}
+@media (max-width:992px) {
+  .about .contaner{
+    flex-direction: column;
+  }
+}
+.about .contaner .about-img{
+  background-image: url("https://media.istockphoto.com/photos/studio-portrait-of-elegant-man-dark-background-picture-id923681548?k=20&m=923681548&s=612x612&w=0&h=IM6etGn_LfaOyGY5ifYhMdeySTS8XOyGBaWk7lGcSps=");
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width:100%;
+  height:500px;
+  border: 1px solid white;
+  box-shadow: 1px 1px 10px black;
+}
+.about .contaner .about-text h1{
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom:20px;
+}
+.about .contaner .about-text p{
+  line-height: 1.8;
+  color:rgb(210, 210, 210);
+}
+.about .contaner .about-munu{
+  margin-top:30px;
+}
+.about .contaner .about-munu .about-choose ul{
+  display: flex;
+  list-style: none;
+  gap:30px;
+}
+.about .contaner .about-munu .about-choose ul li{
+  cursor: pointer;
+}
+.about .contaner .about-munu .about-choose ul li.active{
+  position: relative;
+}
+.about .contaner .about-munu .about-choose ul li.active::after{
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0%;
+  height:3px;
+  background-color: var(--primary-color);
+  animation: moving 0.1s forwards linear;
+}
+@keyframes moving {
+  0%{
+    width: 0;
+  }
+  100%{
+    width:40%;
+  }
+}
+.about .contaner .about-munu [class^=about-choose-part]{
+  margin-top: 50px;
+}
+.about .contaner .about-munu [class^=about-choose-part] .about-choose-sections{
+  margin-bottom:20px;
+}
+.about .contaner .about-munu [class^=about-choose-part] .about-choose-sections h5{
+  color:var(--primary-color);
+}
+/* end of about me*/
+/* start of my Services*/
+.Services{
+  background-color: var(--secondory-color);
+  padding:var(--padding-number) 0;
+}
+.Services .contaner h1{
+  font-size: 40px;
+  margin-bottom:calc(var(--padding-number) / 2) ;
+}
+.Services .contaner .Services-boxes{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  gap:30px;
+}
+.Services .contaner .Services-boxes .Services-box{
+  background-color: rgb(41, 41, 41);
+  padding:30px 20px;
+  border-radius: 10px;
+  transition: var(--main-transition);
+}
+.Services .contaner .Services-boxes .Services-box i{
+  margin-bottom: 30px;
+}
+.Services .contaner .Services-boxes .Services-box h1{
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+.Services .contaner .Services-boxes .Services-box a,
+.Services .contaner .Services-boxes .Services-box p{
+  line-height: 1.5;
+  color:rgb(210, 210, 210);
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+.Services .contaner .Services-boxes .Services-box a{
+  text-decoration: none;
+  line-height: 0;
+}
+.Services .contaner .Services-boxes .Services-box:hover{
+  background-color: var(--primary-color);
+  transform: translateY(-10px);
+}
+/* end of my Services*/
+/* start of my Work*/
+.Work{
+  background-color: var(--secondory-color);
+  padding:var(--padding-number) 0;
+}
+.Work .contaner{
+  position: relative;
+}
+.Work .contaner h1{
+  font-size: 40px;
+  margin-bottom:calc(var(--padding-number) / 2) ;
+}
+.Work .contaner .Work-boxes{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  gap:30px;
+}
+.Work .contaner .Work-boxes .Work-box{
+  position: relative;
+  overflow: hidden;
+  transition: var(--main-transition);
+  border-radius: 10px;
+  border: none;
+  width:100%;
+  height:450px;
+}
+.Work .contaner .Work-boxes .Work-box [class^=Work-img]{
+  background-size: cover;
+  background-position: center;
+  width:100%;
+  height:100%;
+  border: none;
+  border-radius: 10px;
+  transition: var(--main-transition);
+}
+.Work .contaner .Work-boxes .Work-box .Work-img1{
+  background-image: url("https://media.istockphoto.com/photos/man-using-mobile-smart-phone-with-global-network-connection-and-picture-id1274394138?b=1&k=20&m=1274394138&s=170667a&w=0&h=DTMn7Vg-lHFiz3yuo1O1EUQYIYQ6Wx4RmQn0buuoOGs=");
+  background-position: right;
+}
+.Work .contaner .Work-boxes .Work-box .Work-img2{
+  background-image: url("https://cdn.wallpapersafari.com/20/83/5zFt1U.jpg");
+}
+.Work .contaner .Work-boxes .Work-box .Work-img3{
+  background-image: url("https://cdn.dribbble.com/users/675405/screenshots/6513868/background-19.jpg?compress=1&resize=400x300");
+}
+.Work .contaner .Work-boxes .Work-box .Work-text{
+  position: absolute;
+  top:100%;
+  left:0;
+  background-image: linear-gradient(to top, var(--primary-color),transparent);
+  width:100%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 30px;
+  transition: var(--main-transition);
+}
+.Work .contaner .Work-boxes .Work-box .Work-text h3{
+  margin-bottom: 20px;
+}
+.Work .contaner .Work-boxes .Work-box .Work-text p{
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.Work .contaner .Work-boxes .Work-box .Work-text i{
+  background-color: white;
+  color:var(--primary-color);
+  padding:15px;
+  border-radius: 50%;
+}
+.Work .contaner .Work-boxes .Work-box:hover [class^=Work-img]{
+  transform: scale(1.1);
+}
+.Work .contaner .Work-boxes .Work-box:hover .Work-text{
+  top:0;
+}
+.Work .contaner button{
+  position: absolute;
+  bottom:-100px;
+  left:50%;
+  transform: translate(-50%,-50%);
+  background-color: transparent;
+  color:white;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  padding:10px 30px;
+  font-size: 14px;
+  transition: var(--main-transition);
+}
+.Work .contaner button:hover{
+  background-color: var(--primary-color);
+}
+/* end of my Work*/
+/* start of my Contact*/
+.Contact{
+  background-color: var(--secondory-color);
+  padding:var(--padding-number) 0;
+}
+.Contact .contaner{
+  display: flex;
+  gap:var(--padding-number);
+}
+.Contact .contaner h1{
+  font-size: 40px;
+  margin-bottom:calc(var(--padding-number) / 2) ;
+}
+.Contact .contaner .Contact-socal .icons{
+  display: flex;
+  gap:20px;
+  margin-bottom:30px;
+}
+.Contact .contaner .Contact-socal .icons i{
+  color:var(--primary-color);
+}
+.Contact .contaner .Contact-socal .icons2{
+  display: flex;
+  gap:15px;
+  margin-top:40px;
+  margin-bottom: 60px;
+}
+.Contact .contaner .Contact-socal .icons2 i{
+  color:#777;
+  font-size: 22px;
+  transition: var(--main-transition);
+}
+.Contact .contaner .Contact-socal .icons2 i:hover{
+  color:var(--primary-color);
+  transform: translateY(-5px);
+}
+@media (max-width:767px) {
+  .Contact .contaner{
+    flex-direction: column;
+  }
+  .Contact .contaner .Contact-socal{
+    text-align: center;
+  }
+  .Contact .contaner .Contact-socal .icons2{
+    justify-content:center;
+    align-items: center;
+  }
+}
+@media (min-width:550px) {
+  .Contact .contaner .Contact-socal .icons{
+    flex-direction: column;
+  }
+}
+@media (min-width:767px) {
+  .Contact .contaner .Contact-socal .icons{
+    flex-direction: row;
+  }
+}
+.Contact .contaner .Contact-socal input{
+  background-color: var(--primary-color);
+  color:white;
+  padding:15px 30px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+.Contact .contaner form{
+  display: flex;
+  flex-direction: column;
+  flex:1;
+  gap:30px;
+}
+.Contact .contaner form input,
+.Contact .contaner form textarea{
+  background-color: rgb(41, 41, 41);
+  border: none;
+  border-radius: 5px;
+  padding:15px 20px;
+  color:white;
+}
+.Contact .contaner form input:focus,
+.Contact .contaner form textarea:focus{
+  outline: none;
+}
+.Contact .contaner form button{
+  background-color: var(--primary-color);
+  padding:15px 40px;
+  font-size: 14px;
+  cursor: pointer;
+  width: fit-content;
+  border: none;
+  color:white;
+  border-radius: 5px;
+}
+/* end of my Contact*/
+/* start of my footer*/
+footer{
+  background-color: rgb(41, 41, 41);
+  padding:20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+}
+/* end of my footer*/
